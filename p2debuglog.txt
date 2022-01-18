@@ -24,18 +24,74 @@ warning: Error disabling address space randomization: Operation not permitted
 
 Breakpoint 1, main () at p2original.c:31
 31      num1 = input();
+(gdb) s
+input () at p2original.c:7
+7   {
+(gdb) n
+10    printf("Enter a number:\n");
 (gdb) n
 Enter a number:
+11    scanf("%d", &num);
+(gdb) n
 5
+12    return num;
+(gdb) n
+13  }
+(gdb) n
+main () at p2original.c:32
 32      num2 = input();
+(gdb) p num1
+$1 = 5
+(gdb) p num2
+$2 = 0
+(gdb) s
+input () at p2original.c:7
+7   {
+(gdb) n
+10    printf("Enter a number:\n");
 (gdb) n
 Enter a number:
-7
+11    scanf("%d", &num);
+(gdb) n
+8
+12    return num;
+(gdb) n
+13  }
+(gdb) n
+main () at p2original.c:35
 35      sum = add(num1, num2);
+(gdb) s
+add (a=5, b=8) at p2original.c:18
+18    sum = a+b;
 (gdb) n
+19    return sum;
+(gdb) p sum
+$3 = 13
+(gdb) n
+20  }
+(gdb) n
+main () at p2original.c:37
 37      output(num1, num2, sum);
+(gdb) s
+output (a=5, b=8, sum=13) at p2original.c:25
+25    printf("sum of %d and %d is %d\n", a, b, sum);
 (gdb) n
-sum of 5 and 7 is 12
+sum of 5 and 8 is 13
+26    }
+(gdb) n
+main () at p2original.c:39
 39      return 0;
 (gdb) n
 40    }(gdb) 
+__libc_start_main (main=0x561d77c00808 <main>, argc=1, 
+    argv=0x7ffe49f811a8, init=<optimized out>, fini=<optimized out>, 
+    rtld_fini=<optimized out>, stack_end=0x7ffe49f81198)
+    at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 147] will be killed.
+
+Quit anyway? (y or n) y
+ 
