@@ -1,3 +1,4 @@
+//add wo numbers
 #include<stdio.h>
 void input(int *a, int *b)
 {
@@ -14,8 +15,9 @@ void output(int a, int b, int sum)
 }
 int main()
 {
-  int x,y,z;
-  input(&x,&y);
-  add(x,y,&z);
-  output(x,y,z);
+  int a,b,sum;
+  input(&a,&b); //pass by reference
+  add(a,b,&sum); //pass by value(a,b) and reference(sum)
+  output(a,b,sum); //pass by value
+  return 0
 }
