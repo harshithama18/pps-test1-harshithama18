@@ -1,4 +1,3 @@
-
 #include<stdio.h>
 
 // You can return only one thing from a function at a time
@@ -8,7 +7,7 @@ int input()
   // to take input from user
   int num;
   printf("Enter a number:\n");
-  scanf("%d", &num);
+  scanf("%d", &num );
   return num;
 }
 

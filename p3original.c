@@ -19,5 +19,6 @@ int main()
   input(&a,&b); //pass by reference
   add(a,b,&sum); //pass by value(a,b) and reference(sum)
   output(a,b,sum); //pass by value
-  return 0
+  return 0;
+
 }
