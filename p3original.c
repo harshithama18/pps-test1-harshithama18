@@ -1,24 +1,22 @@
-//add wo numbers
 #include<stdio.h>
 void input(int *a, int *b)
 {
-  printf("Enter the two numbers\n");
-  scanf("%d%d" , a, b);
+  printf("Enter a number\n");
+  scanf("%d %d", a, b);
 }
-void add(int a, int b, int *sum)
+void add(int a, int b, int *c)
 {
-  *sum=a+b;
+  *c=a+b;
 }
-void output(int a, int b, int sum)
+void output(int a, int b, int c)
 {
-  printf("sum of %d+%d=%d\n" ,a,b,sum);
+  printf("%d+%d=%d\n",a,b,c);
 }
 int main()
 {
-  int a,b,sum;
-  input(&a,&b); //pass by reference
-  add(a,b,&sum); //pass by value(a,b) and reference(sum)
-  output(a,b,sum); //pass by value
+  int a, b, c;
+  input(&a,&b);
+  add(a,b,&c);
+  output(a,b,c);
   return 0;
-
 }

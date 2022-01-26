@@ -17,89 +17,93 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x8ac: file p4original.c, line 50.
+Breakpoint 1 at 0x8b2: file p4original.c, line 54.
 (gdb) r
 Starting program: /home/runner/pps-test1-harshithama18-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4original.c:50
-50      a = input();
+Breakpoint 1, main () at p4original.c:54
+54    a=input();
 (gdb) s
 input () at p4original.c:3
 3   {
 (gdb) n
-5   printf("Enter a number\n");
+5     printf("Enter a number\n");
 (gdb) n
 Enter a number
-6   scanf("%d", &a);
-(gdb) n
-7
-7   return a;
-(gdb) n
-8   }
-(gdb) n
-main () at p4original.c:51
-51      b = input();
-(gdb) s
-input () at p4original.c:3
-3   {
-(gdb) n
-5   printf("Enter a number\n");
-(gdb) n
-Enter a number
-6   scanf("%d", &a);
+6     scanf("%d", &a);
 (gdb) n
 8
-7   return a;
+7     return a;
 (gdb) n
 8   }
 (gdb) n
-main () at p4original.c:52
-52      c = input();
+main () at p4original.c:55
+55    b=input();
 (gdb) s
 input () at p4original.c:3
 3   {
 (gdb) n
-5   printf("Enter a number\n");
+5     printf("Enter a number\n");
 (gdb) n
 Enter a number
-6   scanf("%d", &a);
+6     scanf("%d", &a);
 (gdb) n
-9
-7   return a;
+45
+7     return a;
 (gdb) n
 8   }
 (gdb) n
-main () at p4original.c:53
-53      result=cmp(a, b, c);
+main () at p4original.c:56
+56    c=input();
 (gdb) s
-cmp (a=7, b=8, c=9) at p4original.c:12
+input () at p4original.c:3
+3   {
+(gdb) n
+5     printf("Enter a number\n");
+(gdb) n
+Enter a number
+6     scanf("%d", &a);
+(gdb) n
+34
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4original.c:57
+57    result=cmp(a, b, c);
+(gdb) s
+cmp (a=8, b=45, c=34) at p4original.c:12
 12    if(a>b && a>c)
 (gdb) n
-16  else if(b>a && b>c)
+16    else if(b>a && b>c)
 (gdb) n
-20  else if(c>a && c>b)
+18      result=2;
 (gdb) n
-22      return 3;
+32    return result;
 (gdb) n
 33  }
 (gdb) n
-main () at p4original.c:54
-54      output(result);
+main () at p4original.c:58
+58    output(result);
+(gdb) s
+output (result=2) at p4original.c:36
+36   if(result==1)
 (gdb) n
-c is greater
-55      return 0;
+39   else if(result==2)
 (gdb) n
-56    }
+40   printf("b is greater\n");
 (gdb) n
-__libc_start_main (main=0x560ddfe008a4 <main>, argc=1, argv=0x7fffe4061ac8, 
-    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7fffe4061ab8) at ../csu/libc-start.c:344
-344 ../csu/libc-start.c: No such file or directory.
-(gdb) q
+b is greater
+50  }
+(gdb) n
+main () at p4original.c:59
+59    return 0;
+(gdb) n
+60  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 84] will be killed.
+    Inferior 1 [process 143] will be killed.
 
 Quit anyway? (y or n) y
  

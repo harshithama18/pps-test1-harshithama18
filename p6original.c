@@ -11,13 +11,13 @@ int sum_n(int n)
   int i,sum=0;
   {
     for(i=1;n>=i;i++)
-  sum=sum+i;
+    sum=sum+i;
   }
   return sum;
 }
-void output(int n,int sum)
+void output(int n, int sum)
 {
-  printf("the sum of all %d=%d",n,sum);
+  printf("The sum of all %d =%d",n,sum);
 }
 int main()
 {

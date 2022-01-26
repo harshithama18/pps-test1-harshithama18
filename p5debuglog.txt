@@ -27,58 +27,47 @@ Breakpoint 1, main () at p5original.c:50
 (gdb) n
 52    input(&a,&b,&c);
 (gdb) s
-input (a=0x7ffec6e9cf88, b=0x7ffec6e9cf8c, 
-    c=0x7ffec6e9cf90) at p5original.c:4
-4     printf("Enter 3 number:\n");
+input (a=0x7ffd987cfbb8, b=0x7ffd987cfbbc, c=0x7ffd987cfbc0) at p5original.c:4
+4     printf("Enter 3 numbers:\n");
 (gdb) n
-Enter 3 number:
+Enter 3 numbers:
 5     scanf("%d %d %d", a, b, c);
 (gdb) n
-7 8 9
+48
+92
+56
 6   }
 (gdb) n
 main () at p5original.c:53
 53    cmp(a, b, c, &result);
 (gdb) s
-cmp (a=7, b=8, c=9, result=0x7ffec6e9cf94)
-    at p5original.c:9
-9    if(a>b && a>c)
+cmp (a=48, b=92, c=56, result=0x7ffd987cfbc4) at p5original.c:9
+9     if(a>b && a>c)
 (gdb) n
-13   else if(b>a && b>c)
+13    else if(b>a && b>c)
 (gdb) n
-17   else if(c>a && c>b)
-(gdb) n
-19     *result=3;
+15      *result=2;
 (gdb) n
 29  }
 (gdb) n
 main () at p5original.c:54
 54    output(result);
 (gdb) s
-output (result=3) at p5original.c:32
+output (result=2) at p5original.c:32
 32    if(result==1)
 (gdb) n
-36    if(result==2)
+36    else if(result==2)
 (gdb) n
-40    else if(result==3)
-(gdb) n
-42      printf("c is greater");
+38      printf("b is greater");
 (gdb) n
 48  }
 (gdb) n
 main () at p5original.c:55
 55    return 0;
 (gdb) n
-56  }(gdb) n
-__libc_start_main (main=0x55a0742008a9 <main>, argc=1, 
-    argv=0x7ffec6e9d088, init=<optimized out>, 
-    fini=<optimized out>, rtld_fini=<optimized out>, 
-    stack_end=0x7ffec6e9d078) at ../csu/libc-start.c:344
-344 ../csu/libc-start.c: No such file or directory.
-(gdb) q
+56  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 93] will be killed.
+    Inferior 1 [process 324] will be killed.
 
 Quit anyway? (y or n) y
- 

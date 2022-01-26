@@ -33,7 +33,7 @@ input_n () at p6original.c:3
 Enter the value of n
 6     scanf("%d",&n);
 (gdb) n
-7
+9 
 7     return n;
 (gdb) n
 8   }
@@ -41,36 +41,44 @@ Enter the value of n
 main () at p6original.c:26
 26    y=sum_n(x);
 (gdb) s
-sum_n (n=7) at p6original.c:11
+sum_n (n=9) at p6original.c:11
 11    int i,sum=0;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
-14    sum=sum+i;
+14      sum=sum+i;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
-14    sum=sum+i;
+14      sum=sum+i;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
-14    sum=sum+i;
+14      sum=sum+i;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
-14    sum=sum+i;
+14      sum=sum+i;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
-14    sum=sum+i;
+14      sum=sum+i;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
-14    sum=sum+i;
+14      sum=sum+i;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
-14    sum=sum+i;
+14      sum=sum+i;
+(gdb) n
+13      for(i=1;n>=i;i++)
+(gdb) n
+14      sum=sum+i;
+(gdb) n
+13      for(i=1;n>=i;i++)
+(gdb) n
+14      sum=sum+i;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
@@ -81,8 +89,8 @@ sum_n (n=7) at p6original.c:11
 main () at p6original.c:27
 27    output(x,y);
 (gdb) s
-output (n=7, sum=28) at p6original.c:20
-20    printf("the sum of all %d=%d",n,sum);
+output (n=9, sum=45) at p6original.c:20
+20    printf("The sum of all %d =%d",n,sum);
 (gdb) n
 21  }
 (gdb) n
@@ -92,6 +100,7 @@ main () at p6original.c:28
 29  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 76] will be killed.
+    Inferior 1 [process 83] will be killed.
 
 Quit anyway? (y or n) y
+ 

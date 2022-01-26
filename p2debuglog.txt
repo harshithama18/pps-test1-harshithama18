@@ -17,81 +17,68 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x810: file p2original.c, line 31.
+Breakpoint 1 at 0x810: file p2original.c, line 22.
 (gdb) r
 Starting program: /home/runner/pps-test1-harshithama18-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p2original.c:31
-31      num1 = input();
+Breakpoint 1, main () at p2original.c:22
+22    a=input();
 (gdb) s
-input () at p2original.c:7
-7   {
+input () at p2original.c:3
+3   {
 (gdb) n
-10    printf("Enter a number:\n");
+5     printf("Enter a number:\n");
 (gdb) n
 Enter a number:
-11    scanf("%d", &num);
+6     scanf("%d", &a);
 (gdb) n
-5
-12    return num;
+6
+7     return a;
 (gdb) n
-13  }
+8   }
 (gdb) n
-main () at p2original.c:32
-32      num2 = input();
-(gdb) p num1
-$1 = 5
-(gdb) p num2
-$2 = 0
+main () at p2original.c:23
+23    b=input();
 (gdb) s
-input () at p2original.c:7
-7   {
+input () at p2original.c:3
+3   {
 (gdb) n
-10    printf("Enter a number:\n");
+5     printf("Enter a number:\n");
 (gdb) n
 Enter a number:
-11    scanf("%d", &num);
+6     scanf("%d", &a);
 (gdb) n
 8
-12    return num;
+7     return a;
 (gdb) n
-13  }
+8   }
 (gdb) n
-main () at p2original.c:35
-35      sum = add(num1, num2);
+main () at p2original.c:24
+24    c=sum(a,b);
 (gdb) s
-add (a=5, b=8) at p2original.c:18
-18    sum = a+b;
+sum (a=6, b=8) at p2original.c:12
+12    c=a+b;
 (gdb) n
-19    return sum;
-(gdb) p sum
-$3 = 13
+13    return c;
 (gdb) n
-20  }
+14  }
 (gdb) n
-main () at p2original.c:37
-37      output(num1, num2, sum);
+main () at p2original.c:25
+25    output(a,b,c);
 (gdb) s
-output (a=5, b=8, sum=13) at p2original.c:25
-25    printf("sum of %d and %d is %d\n", a, b, sum);
+output (a=6, b=8, c=14) at p2original.c:17
+17    printf("%d+%d=%d\n",a, b, c);
 (gdb) n
-sum of 5 and 8 is 13
-26    }
+6+8=14
+18  }
 (gdb) n
-main () at p2original.c:39
-39      return 0;
+main () at p2original.c:26
+26    return 0;
 (gdb) n
-40    }(gdb) 
-__libc_start_main (main=0x561d77c00808 <main>, argc=1, 
-    argv=0x7ffe49f811a8, init=<optimized out>, fini=<optimized out>, 
-    rtld_fini=<optimized out>, stack_end=0x7ffe49f81198)
-    at ../csu/libc-start.c:344
-344 ../csu/libc-start.c: No such file or directory.
-(gdb) q
+27  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 147] will be killed.
+    Inferior 1 [process 89] will be killed.
 
 Quit anyway? (y or n) y
- 
