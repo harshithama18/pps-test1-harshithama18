@@ -1,5 +1,5 @@
  
- gcc -g p5original.c
+ gcc -g p5final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -17,57 +17,55 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x8b1: file p5original.c, line 50.
+Breakpoint 1 at 0x82b: file p5final.c, line 23.
 (gdb) r
 Starting program: /home/runner/pps-test1-harshithama18-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p5original.c:50
-50  {
+Breakpoint 1, main () at p5final.c:23
+23  {
 (gdb) n
-52    input(&a,&b,&c);
+25    input(&a,&b,&c);
 (gdb) s
-input (a=0x7ffd987cfbb8, b=0x7ffd987cfbbc, c=0x7ffd987cfbc0) at p5original.c:4
+input (a=0x7ffe09f0b118, b=0x7ffe09f0b11c, 
+    c=0x7ffe09f0b120) at p5final.c:4
 4     printf("Enter 3 numbers:\n");
 (gdb) n
 Enter 3 numbers:
-5     scanf("%d %d %d", a, b, c);
+5     scanf("%d %d %d",a,b,c);
 (gdb) n
-48
-92
-56
+45 29 56
 6   }
 (gdb) n
-main () at p5original.c:53
-53    cmp(a, b, c, &result);
+main () at p5final.c:26
+26    cmp(a,b,c,&large);
 (gdb) s
-cmp (a=48, b=92, c=56, result=0x7ffd987cfbc4) at p5original.c:9
-9     if(a>b && a>c)
+cmp (a=45, b=29, c=56, result=0x7ffe09f0b124)
+    at p5final.c:9
+9     if (a>b && a>c)
 (gdb) n
-13    else if(b>a && b>c)
+12    if (b>c)
 (gdb) n
-15      *result=2;
+16    *result=c;
 (gdb) n
-29  }
+17  }
 (gdb) n
-main () at p5original.c:54
-54    output(result);
+main () at p5final.c:27
+27    output(a,b,c,large);
 (gdb) s
-output (result=2) at p5original.c:32
-32    if(result==1)
+output (a=45, b=29, c=56, large=56) at p5final.c:20
+20    printf("The largest number is %d\n",large);
 (gdb) n
-36    else if(result==2)
+The largest number is 56
+21  }
 (gdb) n
-38      printf("b is greater");
+main () at p5final.c:28
+28    return 0;
 (gdb) n
-48  }
-(gdb) n
-main () at p5original.c:55
-55    return 0;
-(gdb) n
-56  }(gdb) q
+29  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 324] will be killed.
+    Inferior 1 [process 259] will be killed.
 
 Quit anyway? (y or n) y
+ 

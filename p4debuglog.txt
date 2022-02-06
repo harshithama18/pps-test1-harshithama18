@@ -1,5 +1,5 @@
-  
- gcc -g p4original.c
+ 
+ gcc -g p4final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -17,52 +17,20 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x8b2: file p4original.c, line 54.
+Breakpoint 1 at 0x827: file p4final.c, line 27.
 (gdb) r
 Starting program: /home/runner/pps-test1-harshithama18-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p4original.c:54
-54    a=input();
+Breakpoint 1, main () at p4final.c:27
+27    a=input();
 (gdb) s
-input () at p4original.c:3
+input () at p4final.c:3
 3   {
 (gdb) n
-5     printf("Enter a number\n");
+5     printf("Enter a number:\n");
 (gdb) n
-Enter a number
-6     scanf("%d", &a);
-(gdb) n
-8
-7     return a;
-(gdb) n
-8   }
-(gdb) n
-main () at p4original.c:55
-55    b=input();
-(gdb) s
-input () at p4original.c:3
-3   {
-(gdb) n
-5     printf("Enter a number\n");
-(gdb) n
-Enter a number
-6     scanf("%d", &a);
-(gdb) n
-45
-7     return a;
-(gdb) n
-8   }
-(gdb) n
-main () at p4original.c:56
-56    c=input();
-(gdb) s
-input () at p4original.c:3
-3   {
-(gdb) n
-5     printf("Enter a number\n");
-(gdb) n
-Enter a number
+Enter a number:
 6     scanf("%d", &a);
 (gdb) n
 34
@@ -70,40 +38,68 @@ Enter a number
 (gdb) n
 8   }
 (gdb) n
-main () at p4original.c:57
-57    result=cmp(a, b, c);
+main () at p4final.c:28
+28    b=input();
 (gdb) s
-cmp (a=8, b=45, c=34) at p4original.c:12
-12    if(a>b && a>c)
+input () at p4final.c:3
+3   {
 (gdb) n
-16    else if(b>a && b>c)
+5     printf("Enter a number:\n");
 (gdb) n
-18      result=2;
+Enter a number:
+6     scanf("%d", &a);
 (gdb) n
-32    return result;
+90
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4final.c:29
+29    c=input();
+(gdb) s
+input () at p4final.c:3
+3   {
+(gdb) n
+5     printf("Enter a number:\n");
+(gdb) n
+Enter a number:
+6     scanf("%d", &a);
+(gdb) n
+65
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4final.c:30
+30    large=cmp(a,b,c);
+(gdb) s
+cmp (a=34, b=90, c=65) at p4final.c:11
+11    if(a>b && a>c)
+(gdb) n
+14    if (b>c)
+(gdb) n
+15     return b;
+(gdb) n
+19  }
+(gdb) n
+main () at p4final.c:31
+31    output(a,b,c,large);
+(gdb) s
+output (a=34, b=90, c=65, large=90)
+    at p4final.c:22
+22    printf("The largest number is %d\n",large);
+(gdb) n
+The largest number is 90
+23  }
+(gdb) n
+main () at p4final.c:32
+32    return 0;
 (gdb) n
 33  }
-(gdb) n
-main () at p4original.c:58
-58    output(result);
-(gdb) s
-output (result=2) at p4original.c:36
-36   if(result==1)
-(gdb) n
-39   else if(result==2)
-(gdb) n
-40   printf("b is greater\n");
-(gdb) n
-b is greater
-50  }
-(gdb) n
-main () at p4original.c:59
-59    return 0;
-(gdb) n
-60  }(gdb) q
+(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 143] will be killed.
+    Inferior 1 [process 364] will be killed.
 
 Quit anyway? (y or n) y
  

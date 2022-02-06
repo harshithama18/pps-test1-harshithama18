@@ -1,5 +1,5 @@
  
- gcc -g p2original.c
+ gcc -g p2final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -17,68 +17,69 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x810: file p2original.c, line 22.
+Breakpoint 1 at 0x810: file p2final.c, line 22.
 (gdb) r
 Starting program: /home/runner/pps-test1-harshithama18-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p2original.c:22
+Breakpoint 1, main () at p2final.c:22
 22    a=input();
 (gdb) s
-input () at p2original.c:3
+input () at p2final.c:3
 3   {
 (gdb) n
 5     printf("Enter a number:\n");
 (gdb) n
 Enter a number:
-6     scanf("%d", &a);
+6     scanf("%d",&a);
 (gdb) n
-6
+67
 7     return a;
 (gdb) n
 8   }
 (gdb) n
-main () at p2original.c:23
+main () at p2final.c:23
 23    b=input();
 (gdb) s
-input () at p2original.c:3
+input () at p2final.c:3
 3   {
 (gdb) n
 5     printf("Enter a number:\n");
 (gdb) n
 Enter a number:
-6     scanf("%d", &a);
+6     scanf("%d",&a);
 (gdb) n
-8
+922
 7     return a;
 (gdb) n
 8   }
 (gdb) n
-main () at p2original.c:24
-24    c=sum(a,b);
+main () at p2final.c:24
+24    c=add(a,b);
 (gdb) s
-sum (a=6, b=8) at p2original.c:12
+add (a=67, b=922) at p2final.c:12
 12    c=a+b;
 (gdb) n
 13    return c;
 (gdb) n
 14  }
 (gdb) n
-main () at p2original.c:25
+main () at p2final.c:25
 25    output(a,b,c);
 (gdb) s
-output (a=6, b=8, c=14) at p2original.c:17
-17    printf("%d+%d=%d\n",a, b, c);
+output (a=67, b=922, c=989) at p2final.c:17
+17    printf("%d+%d=%d",a,b,c);
 (gdb) n
-6+8=14
 18  }
 (gdb) n
-main () at p2original.c:26
+main () at p2final.c:26
 26    return 0;
 (gdb) n
-27  }(gdb) q
+27  }
+(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 89] will be killed.
+    Inferior 1 [process 61] will be killed.
 
 Quit anyway? (y or n) y
+ 

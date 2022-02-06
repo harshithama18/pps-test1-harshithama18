@@ -8,49 +8,27 @@ void cmp(int a, int b, int c, int *result)
 {
   if(a>b && a>c)
   {
-    *result=1;
+    *result=a;
   }
-  else if(b>a && b>c)
+  else if(b>c)
   {
-    *result=2;
+    *result=b;
   }
-  else if(c>a && c>b)
-  {
-    *result=3;
+  else
+  { 
+    *result=c;
   }
-  else if(a==b && a==c)
-  {
-    *result=4;
-  }
-  else 
-  {
-    result=0;
-  }
+  
 }
-void output(int result)
+void output(int a, int b, int c, int large)
 {
-  if(result==1)
-  {
-    printf("a is greater");
-  }
-  else if(result==2)
-  {
-    printf("b is greater");
-  }
-  else if(result==3)
-  {
-    printf("c is greater");
-  }
-  else if(result==4)
-  {
-    printf("All are equal");
-  }
+  printf("The largest number is %d\n",large);
 }
 int main()
 {
-  int a, b, c, result;
+  int a, b, c, large;
   input(&a,&b,&c);
-  cmp(a, b, c, &result);
-  output(result);
+  cmp(a, b, c, &large);
+  output(a,b,c,large);
   return 0;
 }

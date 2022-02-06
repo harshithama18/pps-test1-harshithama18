@@ -1,5 +1,5 @@
  
- gcc -g p6original.c
+ gcc -g p6final.c
  gdb a.out
 GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
 Copyright (C) 2018 Free Software Foundation, Inc.
@@ -17,48 +17,32 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from a.out...done.
 (gdb) b main
-Breakpoint 1 at 0x81e: file p6original.c, line 25.
+Breakpoint 1 at 0x81e: file p6final.c, line 25.
 (gdb) r
 Starting program: /home/runner/pps-test1-harshithama18-1/a.out 
 warning: Error disabling address space randomization: Operation not permitted
 
-Breakpoint 1, main () at p6original.c:25
+Breakpoint 1, main () at p6final.c:25
 25    x=input_n();
 (gdb) s
-input_n () at p6original.c:3
+input_n () at p6final.c:3
 3   {
 (gdb) n
-5     printf("Enter the value of n\n");
+5     printf("Enter the value of n:\n");
 (gdb) n
-Enter the value of n
-6     scanf("%d",&n);
+Enter the value of n:
+6     scanf("%d", &n);
 (gdb) n
-9 
+5
 7     return n;
 (gdb) n
 8   }
 (gdb) n
-main () at p6original.c:26
+main () at p6final.c:26
 26    y=sum_n(x);
 (gdb) s
-sum_n (n=9) at p6original.c:11
-11    int i,sum=0;
-(gdb) n
-13      for(i=1;n>=i;i++)
-(gdb) n
-14      sum=sum+i;
-(gdb) n
-13      for(i=1;n>=i;i++)
-(gdb) n
-14      sum=sum+i;
-(gdb) n
-13      for(i=1;n>=i;i++)
-(gdb) n
-14      sum=sum+i;
-(gdb) n
-13      for(i=1;n>=i;i++)
-(gdb) n
-14      sum=sum+i;
+sum_n (n=5) at p6final.c:11
+11    int i, sum=0;
 (gdb) n
 13      for(i=1;n>=i;i++)
 (gdb) n
@@ -86,21 +70,22 @@ sum_n (n=9) at p6original.c:11
 (gdb) n
 17  }
 (gdb) n
-main () at p6original.c:27
+main () at p6final.c:27
 27    output(x,y);
 (gdb) s
-output (n=9, sum=45) at p6original.c:20
-20    printf("The sum of all %d =%d",n,sum);
+output (n=5, sum=15) at p6final.c:20
+20    printf("The sum of all %d numbers is %d\n",n,sum);
 (gdb) n
+The sum of all 5 numbers is 15
 21  }
 (gdb) n
-main () at p6original.c:28
+main () at p6final.c:28
 28    return 0;
 (gdb) n
 29  }(gdb) q
 A debugging session is active.
 
-    Inferior 1 [process 83] will be killed.
+    Inferior 1 [process 378] will be killed.
 
 Quit anyway? (y or n) y
- 
+

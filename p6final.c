@@ -1,41 +1,29 @@
 #include<stdio.h>
-int input()
+int input_n()
 {
-  int a;
-  printf("Enter the number :");
-  scanf("%d", &a);
-  return a;
+  int n;
+  printf("Enter the value of n:\n");
+  scanf("%d", &n);
+  return n;
 }
-int sum(int a)
+int sum_n(int n)
 {
-  int i, total=0;
-  for(i=1;i<=a;i++)
+  int i, sum=0;
   {
-    total=total+i;
+    for(i=1;n>=i;i++)
+    sum=sum+i;
   }
-  return total;
+  return sum;
 }
-void output(int a,int total)
+void output(int n,int sum)
 {
-  int i;
-  for( i=1;i<a;i++)
-  {
-    printf("%d+", i);
-  }
-  for(i=1;i<=a;i++)
-  {
-  if(i==a)
-  {
-    printf("%d=", i);
-  }
-  }
-printf("%d is a function prototype \n", total);
+  printf("The sum of all %d numbers is %d\n",n,sum);
 }
 int main()
 {
-  int a,total;
-  a=input();
-  total=sum(a);
-  output(a,total);
+  int x,y;
+  x=input_n();
+  y=sum_n(x);
+  output(x,y);
   return 0;
 }
