@@ -1,7 +1,7 @@
 #include<stdio.h>
 struct _complex{ float real,imaginary;};
 typedef struct _complex Complex;
-int get_n() 
+int get_n()
 { 
   int n;
   printf("enter the number of values to be added\n");

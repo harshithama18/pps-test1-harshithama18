@@ -1,1 +1,151 @@
+ 
+ gcc -g p11final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x9bd: file p11final.c, line 41.
+(gdb) r
+Starting program: /home/runner/pps-test1-harshithama18-4/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p11final.c:41
+41  {
+(gdb) n
+43    x=get_n();
+(gdb) s
+get_n () at p11final.c:5
+5   { 
+(gdb) n
+7     printf("enter the number of values to be added\n");
+(gdb) n
+enter the number of values to be added
+8     scanf("%d",&n);
+(gdb) n
+5
+9     return n;
+(gdb) n
+10  }
+(gdb) n
+main () at p11final.c:44
+44    Complex h[x];
+(gdb) s
+45    input_n_complex(x,h);
+(gdb) s
+input_n_complex (n=5, c=0x7ffdbf7bd230) at p11final.c:13
+13    for(int i=0;i<n;i++)
+(gdb) n
+15        printf("enter the values\n");
+(gdb) n
+enter the values
+16        scanf("%f %f",&c[i].real,&c[i].imaginary);
+(gdb) n
+2 3
+13    for(int i=0;i<n;i++)
+(gdb) n
+15        printf("enter the values\n");
+(gdb) n
+enter the values
+16        scanf("%f %f",&c[i].real,&c[i].imaginary);
+(gdb) n
+5 6
+13    for(int i=0;i<n;i++)
+(gdb) n
+15        printf("enter the values\n");
+(gdb) n
+enter the values
+16        scanf("%f %f",&c[i].real,&c[i].imaginary);
+(gdb) n
+7 8
+13    for(int i=0;i<n;i++)
+(gdb) n
+15        printf("enter the values\n");
+(gdb) n
+enter the values
+16        scanf("%f %f",&c[i].real,&c[i].imaginary);
+(gdb) n
+5 6
+13    for(int i=0;i<n;i++)
+(gdb) n
+15        printf("enter the values\n");
+(gdb) n
+enter the values
+16        scanf("%f %f",&c[i].real,&c[i].imaginary);
+(gdb) n
+1 2
+13    for(int i=0;i<n;i++)
+(gdb) n
+18  }
+(gdb) n
+main () at p11final.c:46
+46    output(x,h,add_n_complex(x,h));
+(gdb) s
+add_n_complex (n=5, c=0x7ffdbf7bd230) at p11final.c:22
+22    f.real=0;f.imaginary=0;
+(gdb) n
+23    for(int i=0;i<n;i++)
+(gdb) n
+25       f.real+=c[i].real;
+(gdb) n
+26       f.imaginary+=c[i].imaginary;
+(gdb) n
+23    for(int i=0;i<n;i++)
+(gdb) n
+25       f.real+=c[i].real;
+(gdb) n
+26       f.imaginary+=c[i].imaginary;
+(gdb) n
+23    for(int i=0;i<n;i++)
+(gdb) n
+25       f.real+=c[i].real;
+(gdb) n
+26       f.imaginary+=c[i].imaginary;
+(gdb) n
+23    for(int i=0;i<n;i++)
+(gdb) n
+25       f.real+=c[i].real;
+(gdb) n
+26       f.imaginary+=c[i].imaginary;
+(gdb) n
+23    for(int i=0;i<n;i++)
+(gdb) n
+25       f.real+=c[i].real;
+(gdb) n
+26       f.imaginary+=c[i].imaginary;
+(gdb) n
+23    for(int i=0;i<n;i++)
+(gdb) n
+28    return f;
+(gdb) n
+29  }
+(gdb) n
+2 + 3i +5 + 6i +7 + 8i +5 + 6i + 1 + 2i is 20 + 25i
+main () at p11final.c:47
+47    return 0;
+(gdb) n
+48  }
+(gdb) n
+__libc_start_main (main=0x55bd8d6009ac <main>, argc=1, argv=0x7ffdbf7bd3a8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7ffdbf7bd398) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 2013] will be killed.
+
+Quit anyway? (y or n) y
+ 

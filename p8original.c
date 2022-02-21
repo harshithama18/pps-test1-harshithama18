@@ -7,7 +7,7 @@ float input()
   scanf("%f", &n);
   return n;
 }
-float my_sqrt(float n)
+float my_sqrt(float n) 
 {
   float y=1;
   float x=n;
